@@ -1,0 +1,41 @@
+Benvenuti nel sistema di documentazione dell'integrazione dei prodotti Tvox.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque, lectus pharetra egestas bibendum, libero nisl placerat ante, id varius nunc dolor eu nunc. Vivamus eu metus sodales, laoreet odio vel, pretium lacus. Morbi convallis nulla in tristique scelerisque. Nunc urna diam, egestas ut pretium sit amet, pharetra sit amet ante. Pellentesque varius mauris eu tellus dapibus, in lobortis ligula accumsan. Etiam dapibus elit eget turpis condimentum mollis. Donec in lorem a nulla pretium luctus eget eu eros. Quisque molestie iaculis neque, eget sagittis nunc suscipit eget. Aenean vestibulum at lectus eu aliquet. Cras varius commodo mi nec fermentum. Vivamus et ligula purus. Sed eleifend elit arcu, non rutrum magna gravida in.
+
+Quisque gravida pellentesque vulputate. Suspendisse ac efficitur nisi, quis porttitor justo. Nam nisl mi, lobortis eu mi ac, sodales commodo dolor. 
+- Nullam gravida rutrum lorem et mattis. Nam cursus justo nec nisl viverra tristique. 
+- Aliquam bibendum eros sed est dapibus, in condimentum ipsum dictum. Vestibulum vitae sem elit.
+
+
+## Projects 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque, lectus pharetra egestas bibendum, libero nisl placerat ante, id varius nunc dolor eu nunc. Vivamus eu metus sodales, laoreet odio vel, pretium lacus. Morbi convallis nulla in tristique scelerisque. Nunc urna diam, egestas ut pretium sit amet, pharetra sit amet ante. Pellentesque varius mauris eu tellus dapibus, in lobortis ligula accumsan. Etiam dapibus elit eget turpis condimentum mollis. Donec in lorem a nulla pretium luctus eget eu eros. Quisque molestie iaculis neque, eget sagittis nunc suscipit eget. Aenean vestibulum at lectus eu aliquet. Cras varius commodo mi nec fermentum. Vivamus et ligula purus. Sed eleifend elit arcu, non rutrum magna gravida in.
+
+### Screen pop-up
+
+Morbi rutrum consequat ex, id cursus ex fermentum nec. Cras cursus mi a eros laoreet, porta suscipit dolor posuere. Donec ac tincidunt diam. Aenean blandit sem quis porttitor cursus. Nullam auctor, ligula a ultricies bibendum, justo dolor tincidunt felis, ac lacinia risus enim in felis. Etiam pharetra velit ac risus egestas interdum. Proin sodales, est sit amet rhoncus gravida, purus ipsum tincidunt justo, at efficitur felis turpis sed elit. Morbi euismod varius venenatis. Morbi luctus massa egestas, lobortis libero vel, eleifend ligula. Curabitur suscipit dui leo. Ut sit amet volutpat ante, non bibendum augue. Cras consectetur arcu leo, non porttitor magna vehicula aliquam. Phasellus aliquam venenatis sem aliquet ullamcorper. Phasellus congue leo et dui pellentesque dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin convallis risus est, non congue elit convallis ut.
+
+[Screen Popup doc here](screenPopUp.md)
+
+### Widget
+
+Quisque aliquam velit eu nisi condimentum, at dapibus mauris lacinia. Duis vitae nisl libero. Morbi urna tellus, eleifend ut leo a, fermentum pulvinar diam. Mauris dictum non mi et malesuada. Mauris a leo eget nunc laoreet pretium vitae ut ante. Integer ac orci eu odio consequat dapibus id in erat. Morbi porta vestibulum condimentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In efficitur massa eu ultrices congue. Duis egestas tempus iaculis. Morbi at malesuada erat, pellentesque posuere augue. Ut vel rutrum magna. Maecenas sollicitudin sed nibh id sodales.
+
+[Widget doc here](Widget.md)
+
+### License Manager
+
+Vestibulum consequat purus sit amet lorem interdum vestibulum. Nulla interdum augue ex, at laoreet mauris mattis non. Pellentesque in leo nec libero maximus aliquet ac eu quam. Donec est quam, porttitor at mauris sit amet, condimentum volutpat libero. Suspendisse nulla ante, pellentesque quis ex ac, varius semper eros. Vivamus et ligula vitae orci pulvinar malesuada. Proin ut turpis odio. Sed laoreet malesuada diam, at eleifend leo ullamcorper ut. Fusce auctor et erat ac hendrerit. Phasellus sollicitudin ac nibh vitae maximus.
+
+[License Manager doc here](licenseManager.md)
+
+## Technical docs
+- [Screen Popup doc here](screenPopUp.md)
+- [Widget doc here](Widget.md)
+- [License Manager doc here](licenseManager.md)
+- [IVR](file://192.168.0.2/util/dischi/lb/tivr/index.html#introduction)
+
+## License 
+
+Copyright (c) [Telenia Software](https://www.teleniasoftware.com)
+
