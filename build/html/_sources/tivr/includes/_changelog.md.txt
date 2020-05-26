@@ -1,0 +1,5 @@
+# Changelog
+
+## 2.3.1
+
+* Add sendAlarm function to send Alarm with specific priority

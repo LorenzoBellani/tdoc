@@ -1,0 +1,1755 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Play audio message &mdash; Telenia Documentation 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Telenia Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Play audio message</a></li>
+<li><a class="reference internal" href="#set-call-variable">Set call variable</a></li>
+<li><a class="reference internal" href="#get-call-variable">Get call variable</a></li>
+<li><a class="reference internal" href="#get-digits">Get digits</a></li>
+<li><a class="reference internal" href="#choose-option">Choose option</a></li>
+<li><a class="reference internal" href="#play-stored-digits">Play stored digits</a></li>
+<li><a class="reference internal" href="#check-service-is-active">Check service is active</a></li>
+<li><a class="reference internal" href="#transfer-call-to-service">Transfer call to service</a></li>
+<li><a class="reference internal" href="#transfer-call-to-service-advanced">Transfer call to service advanced</a></li>
+<li><a class="reference internal" href="#call-internal-number">Call internal number</a></li>
+<li><a class="reference internal" href="#call-external-number">Call external number</a></li>
+<li><a class="reference internal" href="#get-dial-result">Get dial result</a></li>
+<li><a class="reference internal" href="#play-tts-text">Play TTS text</a></li>
+<li><a class="reference internal" href="#get-value-from-caller-speak">Get value from caller speak</a></li>
+<li><a class="reference internal" href="#start-call-recording">Start call recording</a></li>
+<li><a class="reference internal" href="#stop-call-recording">Stop call recording</a></li>
+<li><a class="reference internal" href="#update-popup-values">Update popup values</a></li>
+<li><a class="reference internal" href="#send-dtmf">Send DTMF</a></li>
+<li><a class="reference internal" href="#load-service-voicemail">Load service voicemail</a></li>
+<li><a class="reference internal" href="#load-service-if-in-calls-limit">Load service if in calls limit</a></li>
+<li><a class="reference internal" href="#check-if-call-channel-is-up">Check if call channel is up</a></li>
+<li><a class="reference internal" href="#hangup-call">Hangup call</a></li>
+<li><a class="reference internal" href="#exit-with-error">Exit with error</a></li>
+<li><a class="reference internal" href="#exit-with-good-state">Exit with good state</a></li>
+<li><a class="reference internal" href="#update-call-statistics">Update call statistics</a></li>
+<li><a class="reference internal" href="#log">Log</a><ul>
+<li><a class="reference internal" href="#info">Info</a></li>
+<li><a class="reference internal" href="#debug">Debug</a></li>
+<li><a class="reference internal" href="#trace">Trace</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#variables">Variables</a><ul>
+<li><a class="reference internal" href="#agi-variables">Agi variables</a></li>
+<li><a class="reference internal" href="#dial-result">Dial Result</a></li>
+<li><a class="reference internal" href="#asr-variables">Asr variables</a></li>
+<li><a class="reference internal" href="#tts-variables">TTS Variables</a></li>
+<li><a class="reference internal" href="#library-variables">Library Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Telenia Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Play audio message</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tivr/includes/_version_2.3.0.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="play-audio-message">
+<h1>Play audio message<a class="headerlink" href="#play-audio-message" title="Permalink to this headline">¶</a></h1>
+<p>Use this function to play an audio message previously loaded on the TVox system.</p>
+<code>
+Ivr_play($val = array())
+</code><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$audioFile</span> <span class="o">=</span> <span class="s2">&quot;audio_message&quot;</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_play</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$audioFile</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_CALLER_EXIT</span><span class="p">){</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">audio_message</span></code></code> with the message to played.</p>
+</div></blockquote>
+<p>In the example on the right side we can see
+<code>$result[0] == TVOX_IVR_CALLER_EXIT`</code> that check if caller hangup the call and <a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with some array values</td>
+</tr>
+</tbody>
+</table><code>
+$val = array($audioFile, $canInterrupt)
+</code><table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$audioFile</td>
+<td>Audio file's name</td>
+</tr>
+<tr>
+<td>$canInterrupt</td>
+<td>Can interrupt file play (possibile values: 1 for interrupt, 0 to not stop play)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="set-call-variable">
+<h1>Set call variable<a class="headerlink" href="#set-call-variable" title="Permalink to this headline">¶</a></h1>
+<p>Use this function to save value into call and popup variable</p>
+<p><code>Ivr_setvar($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">,</span> <span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_setvar</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nx">CUSTOMER_CODE</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">));</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">value</span></code></code> with the value to save.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with two parameters</td>
+</tr>
+</tbody>
+</table><code>
+$val = array($variableName, $variableValue)
+</code><table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$variableName</td>
+<td>Variable's name to save</td>
+</tr>
+<tr>
+<td>$variableValue</td>
+<td>Variable's value to save</td>
+</tr>
+</tbody>
+</table><aside class="notice">
+Call variable is saved on database in <code>`popupinfo`</code> column of  <code>`ast_calls`</code> table and it can used when opening the popup
+</aside></div>
+<div class="section" id="get-call-variable">
+<h1>Get call variable<a class="headerlink" href="#get-call-variable" title="Permalink to this headline">¶</a></h1>
+<p>Get call variable value</p>
+<p><code>Ivr_getvar($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">,</span> <span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">);</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_getvar</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nx">CUSTOMER_CODE</span><span class="p">));</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with variable name as value</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="get-digits">
+<h1>Get digits<a class="headerlink" href="#get-digits" title="Permalink to this headline">¶</a></h1>
+<p>Get digits from user interaction and save as call variable</p>
+<p><code>Ivr_get_digit($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">,</span> <span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">);</span>
+<span class="nv">$fileName</span> <span class="o">=</span> <span class="s2">&quot;audio_file&quot;</span><span class="p">;</span>
+<span class="nv">$maxDigitNumber</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nv">$timeoutDigit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_get_digit</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$fileName</span><span class="p">,</span> <span class="nv">$maxDigitNumber</span><span class="p">,</span> <span class="nx">CUSTOMER_CODE</span><span class="p">,</span> <span class="nv">$timeoutDigit</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_CALLER_EXIT</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Get variable value after digits <code>$value = $this-&gt;Ivr_getvar(array(CUSTOMER_CODE));</code>
+<code>$result[0] == TVOX_IVR_CALLER_EXIT`</code> check if caller hangup the call and <a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with four parameters</td>
+</tr>
+</tbody>
+</table><code>
+$val = array($fileName, $variableName, $maxDigits, $timeoutDigits)
+</code><table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$fileName</td>
+<td>Audio file name to play before collect digits</td>
+</tr>
+<tr>
+<td>$variableName</td>
+<td>Variable name to save</td>
+</tr>
+<tr>
+<td>$maxDigits</td>
+<td>max digits number</td>
+</tr>
+<tr>
+<td>$timeoutDigits</td>
+<td>maximum timeout for insert numbers</td>
+</tr>
+</tbody>
+</table><aside class="notice">
+If need lower digits number than $maxDigits insert # after digits. Remember tell it in audio message
+</aside></div>
+<div class="section" id="choose-option">
+<h1>Choose option<a class="headerlink" href="#choose-option" title="Permalink to this headline">¶</a></h1>
+<p>Do a choice between array values digits</p>
+<p><code>Ivr_choose_option($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$fileName</span> <span class="o">=</span> <span class="s2">&quot;audio_file&quot;</span><span class="p">;</span>
+<span class="nv">$digits</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="nv">$timeoutDigit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastDigit</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_choose_option</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$fileName</span><span class="p">,</span> <span class="nv">$digits</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$timeoutDigit</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_CALLER_EXIT</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastDigit</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Get digit selected with <a class="reference external" href="#library-variables"><code>$value = $this-&gt;lastDigit;</code></a></p>
+<blockquote>
+<div><p><code>$result[0] == TVOX_IVR_CALLER_EXIT`</code> check if caller hangup the call and <a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with four parameters</td>
+</tr>
+</tbody>
+</table><code>
+$val = array($fileName, $digits, $variableName, $timeoutDigits)
+</code><table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$fileName</td>
+<td>Audio file name to play before collect digits</td>
+</tr>
+<tr>
+<td>$digits</td>
+<td>Array with list of the permitted digits</td>
+</tr>
+<tr>
+<td>$variableName</td>
+<td>Variable name to save</td>
+</tr>
+<tr>
+<td>$timeoutDigits</td>
+<td>Maximum timeout for digits insert</td>
+</tr>
+</tbody>
+</table><aside class="notice">
+When proposing the options, the choice is saved in the call variable only if necessary to statistics
+</aside></div>
+<div class="section" id="play-stored-digits">
+<h1>Play stored digits<a class="headerlink" href="#play-stored-digits" title="Permalink to this headline">¶</a></h1>
+<p>Read variable and play digit saved</p>
+<p><code>Ivr_saysaved($val = array()) </code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">,</span> <span class="s2">&quot;CUSTOMER_CODE&quot;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_saysaved</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nx">CUSTOMER_CODE</span><span class="p">));</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with varible name as parameter</td>
+</tr>
+</tbody>
+</table><aside class="notice">
+Play only numeric digits, can't play alphanumeric values
+</aside></div>
+<div class="section" id="check-service-is-active">
+<h1>Check service is active<a class="headerlink" href="#check-service-is-active" title="Permalink to this headline">¶</a></h1>
+<p>Check if service is Active</p>
+<p><code>Ivr_check_service_active($servToCheck)</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$serviceToCheck</span> <span class="o">=</span> <span class="s2">&quot;service_code&quot;</span><span class="p">;</span>
+<span class="nv">$active</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_check_service_active</span><span class="p">(</span><span class="nv">$serviceToCheck</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">service_code</span></code></code> with the service code to check.
+Value <code>$active</code> is boolean</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$servToCheck</td>
+<td></td>
+<td>check if this service code is active</td>
+</tr>
+</tbody>
+</table><aside class="notice">
+Service is active when calendar is open and agents are logged (if queue is configured)
+</aside></div>
+<div class="section" id="transfer-call-to-service">
+<h1>Transfer call to service<a class="headerlink" href="#transfer-call-to-service" title="Permalink to this headline">¶</a></h1>
+<p>Transfer call to service</p>
+<p><code>Ivr_load_serv($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$service</span> <span class="o">=</span> <span class="s2">&quot;service_code&quot;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_load_serv</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$service</span><span class="p">));</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">service_code</span></code></code> with the service code to check.
+<a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with service code as value</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="transfer-call-to-service-advanced">
+<h1>Transfer call to service advanced<a class="headerlink" href="#transfer-call-to-service-advanced" title="Permalink to this headline">¶</a></h1>
+<p>Transfer call to service with advanced settings</p>
+<p><code>Ivr_l_s_extend($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$servCode</span> <span class="o">=</span> <span class="s2">&quot;service_code&quot;</span><span class="p">;</span>
+<span class="nv">$servLabel</span> <span class="o">=</span> <span class="s2">&quot;New label&quot;</span><span class="p">;</span>
+<span class="nv">$servPriority</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
+<span class="nv">$servCallLimit</span> <span class="o">=</span> <span class="s2">&quot;5&quot;</span><span class="p">;</span>
+<span class="nv">$servQueueLimit</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">;</span>
+<span class="nv">$maxQueuedCallPercentage</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$servRecording</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
+<span class="nv">$servSkill1</span> <span class="o">=</span> <span class="s2">&quot;skill1&quot;</span><span class="p">;</span>
+<span class="nv">$servSkill2</span> <span class="o">=</span> <span class="s2">&quot;skill2&quot;</span><span class="p">;</span>
+<span class="nv">$servSkill3</span> <span class="o">=</span> <span class="s2">&quot;skill3&quot;</span><span class="p">;</span>
+<span class="nv">$servSkill4</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$servSkill5</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_l_s_extend</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$servCode</span><span class="p">,</span> <span class="nv">$servLabel</span><span class="p">,</span> <span class="nv">$servPriority</span><span class="p">,</span> <span class="nv">$servCallLimit</span><span class="p">,</span> <span class="nv">$servQueueLimit</span><span class="p">,</span> <span class="nv">$maxQueuedCallPercentage</span><span class="p">,</span> <span class="nv">$servRecording</span><span class="p">,</span> <span class="nv">$servSkill1</span><span class="p">,</span> <span class="nv">$servSkill2</span><span class="p">,</span> <span class="nv">$servSkill3</span><span class="p">,</span> <span class="nv">$servSkill4</span><span class="p">,</span> <span class="nv">$servSkill5</span><span class="p">));</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">service_code</span></code></code> with the service code to check.
+<a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with service parameters</td>
+</tr>
+</tbody>
+</table><code>
+$val = array($servCode, $servLabel, $servPriority, $servCallLimit, $servQueueLimit, $maxQueuedCallPercentage, $servRecording, $servSkill1, $servSkill2, $servSkill3, $servSkill4, $servSkill5)
+</code><table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$servCode</td>
+<td>Service code to tranfer to</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>$servLabel</td>
+<td>Label to show on client near service name</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servPriority</td>
+<td>Service priority</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servCallLimit</td>
+<td>Setting the maximum number of calls managed by the service for calls passing through the current node.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servQueueLimit</td>
+<td>Setting the limit for calls in the queue to the service for calls passing through the current node.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$maxQueuedCallPercentage</td>
+<td>Settings limit in percentage on agents logged for calls passing through the current node.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servRecording</td>
+<td>Call will be recorded when the operator answers.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servSkill1</td>
+<td>First Skillset, in priority order, in calls distibution for the selected service.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servSkill2</td>
+<td>Second skillset, in priority order, in calls distibution for the selected service.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servSkill3</td>
+<td>Third skillset, in priority order, in calls distibution for the selected service.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servSkill4</td>
+<td>Fourth skillset, in priority order, in calls distibution for the selected service.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$servSkill5</td>
+<td>Fifth skillset, in priority order, in calls distibution for the selected service.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="call-internal-number">
+<h1>Call internal number<a class="headerlink" href="#call-internal-number" title="Permalink to this headline">¶</a></h1>
+<p>Call internal number</p>
+<p><code>Ivr_dial($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$number</span> <span class="o">=</span> <span class="s2">&quot;internal_number&quot;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_dial</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$number</span><span class="p">));</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">internal_number</span></code></code> with the internal number to call.<br> Get call result with <a class="reference external" href="#get-dial-result"><code>getDialResult()</code></a>
+<a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with internal number as value</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="call-external-number">
+<h1>Call external number<a class="headerlink" href="#call-external-number" title="Permalink to this headline">¶</a></h1>
+<p>Call external number</p>
+<p><code>Ivr_dial_exter($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$extNumber</span> <span class="o">=</span> <span class="s2">&quot;external_number&quot;</span><span class="p">;</span>
+<span class="nv">$timeToDial</span> <span class="o">=</span> <span class="s2">&quot;180&quot;</span><span class="p">;</span>
+<span class="nv">$dialRetry</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span><span class="p">;</span>
+<span class="nv">$callEnable</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_dial_exter</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$extNumber</span><span class="p">));</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">external_number</span></code></code> with the external number to call. <br> Get call result with <a class="reference external" href="#get-dial-result"><code>getDialResult()</code></a>
+<a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with some parameters as value</td>
+</tr>
+</tbody>
+</table><code>
+$val = array($extNumber, $timeToDial, $dialRetry, $callEnable);
+</code><table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$extNumber</td>
+<td>Number to call</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>$timeToDial</td>
+<td>Time for call duration in seconds</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$dialRetry</td>
+<td>Number of attempts to call the entered number</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>$callEnable</td>
+<td>Call enabling number, configured in the TVox system</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="get-dial-result">
+<h1>Get dial result<a class="headerlink" href="#get-dial-result" title="Permalink to this headline">¶</a></h1>
+<p>Get dial result</p>
+<p><code>getDialResult()</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDialResult</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Result</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NOANSWER</td>
+<td>Call not answered</td>
+</tr>
+<tr>
+<td>ANSWER</td>
+<td>Call answered</td>
+</tr>
+<tr>
+<td>CANCEL</td>
+<td>Call is cancelled</td>
+</tr>
+<tr>
+<td>BUSY</td>
+<td>Called number was busy</td>
+</tr>
+<tr>
+<td>CONGESTION</td>
+<td>No lines available to call</td>
+</tr>
+<tr>
+<td>CHANUNAVAIL</td>
+<td>No routing to PSTN</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="play-tts-text">
+<h1>Play TTS text<a class="headerlink" href="#play-tts-text" title="Permalink to this headline">¶</a></h1>
+<p>Play text as audio</p>
+<p><code>Ivr_speech_synthesize($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$textValue</span> <span class="o">=</span> <span class="s2">&quot;text_to_play&quot;</span><span class="p">;</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;text&quot;</span> <span class="o">=&gt;</span> <span class="nv">$textValue</span><span class="p">,</span> <span class="s2">&quot;language&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;it-IT&quot;</span><span class="p">,</span><span class="s2">&quot;voice&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Luca&quot;</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;male&quot;</span> <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_speech_synthesize</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_CALLER_EXIT</span> <span class="o">||</span> <span class="nv">$res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_FORCED_EXIT</span> <span class="o">||</span> <span class="nv">$res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_ERROR</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>If exit with this dial state <a class="reference external" href="#dial-result">TVOX_IVR_CALLER_EXIT, TVOX_IVR_FORCED_EXIT, TVOX_IVR_ERROR</a>, close call statistics with correct values <a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a></p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with tts options</td>
+</tr>
+</tbody>
+</table><p><code>array(“text” =&gt; $textValue, “language” =&gt; “it-IT”,”voice” =&gt; “Luca”, “gender” =&gt; “male” );</code></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>Text plaied from system</td>
+</tr>
+<tr>
+<td>language</td>
+<td>Text language to read for play (depend on TTS server)</td>
+</tr>
+<tr>
+<td>voice</td>
+<td>Voice's name to play text (depend on TTS server)</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>Voice's gender to play text (depend on TTS server)</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>Timeout for waiting digit if you want make selection</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="get-value-from-caller-speak">
+<h1>Get value from caller speak<a class="headerlink" href="#get-value-from-caller-speak" title="Permalink to this headline">¶</a></h1>
+<p>Recognize caller voice command based on grammar voice and get value.</p>
+<p><code>Ivr_speech_recognition($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$fileName</span> <span class="o">=</span> <span class="s2">&quot;audio_file&quot;</span><span class="p">;</span>
+<span class="nv">$grammar</span> <span class="o">=</span> <span class="s2">&quot;grammar.grxml&quot;</span><span class="p">;</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;file&quot;</span> <span class="o">=&gt;</span> <span class="nv">$fileName</span><span class="p">,</span> <span class="s2">&quot;grammar&quot;</span> <span class="o">=&gt;</span> <span class="nv">$grammar</span><span class="p">,</span> <span class="s2">&quot;language&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;it-IT&quot;</span><span class="p">,</span><span class="s2">&quot;voice&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Luca&quot;</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;male&quot;</span> <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_speech_recognition</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_CALLER_EXIT</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Agi</span><span class="o">-&gt;</span><span class="na">get_variable</span><span class="p">(</span><span class="nx">TVOX_RECOG_RESULT</span><span class="p">);</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">];</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">audio_file</span></code></code> with the system audio file and <code><code class="docutils literal notranslate"><span class="pre">grammar.grxml</span></code></code> with the correct grammar
+If exit with this dial state <a class="reference external" href="#dial-result">TVOX_IVR_CALLER_EXIT</a>, close call statistics with correct values <a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a></p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Array have some values</td>
+</tr>
+</tbody>
+</table><table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>Audio file to play before recognition</td>
+</tr>
+<tr>
+<td>grammar</td>
+<td>Grammar to match voice command</td>
+</tr>
+<tr>
+<td>language</td>
+<td>Text language to read for play (depend on TTS server)</td>
+</tr>
+<tr>
+<td>voice</td>
+<td>Voice's name to play text (depend on TTS server)</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>Voice's gender to play text (depend on TTS server)</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>Timeout for waiting digit if you want make selection</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="start-call-recording">
+<h1>Start call recording<a class="headerlink" href="#start-call-recording" title="Permalink to this headline">¶</a></h1>
+<p>Record call and store to file</p>
+<p><code>Ivr_start_rec($clid, $dnis, $type = “O”, $ivrDoMix = false, $recOnlyCallerChannel = false)</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$clid</span> <span class="o">=</span> <span class="s2">&quot;clid_number&quot;</span><span class="p">;</span>
+<span class="nv">$dnis</span> <span class="o">=</span> <span class="s2">&quot;dnis_number&quot;</span>
+<span class="nv">$type</span> <span class="o">=</span> <span class="s2">&quot;I&quot;</span><span class="p">;</span>
+<span class="nv">$ivrDoMix</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="nv">$recOnlyCallerChannel</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+
+<span class="nv">$filenameRecorded</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_start_rec</span><span class="p">(</span><span class="nv">$clid</span><span class="p">,</span> <span class="nv">$dnis</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$ivrDoMix</span><span class="p">,</span> <span class="nv">$recOnlyCallerChannel</span><span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastDigit</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_choose_option</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$digits</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="mi">1800</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">TVOX_IVR_CALLER_EXIT</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastDigit</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastDigit</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$note</span><span class="o">=</span><span class="s2">&quot;recording_note&quot;</span><span class="p">;</span>
+    <span class="nv">$dest</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_stop_rec</span><span class="p">(</span><span class="nv">$note</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>If exit with this dial state <a class="reference external" href="#dial-result">TVOX_IVR_CALLER_EXIT</a>, close call statistics with correct values <a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a></p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$clid</td>
+<td></td>
+<td>Caller's number</td>
+</tr>
+<tr>
+<td>$dnis</td>
+<td></td>
+<td>Called number</td>
+</tr>
+<tr>
+<td>$type</td>
+<td>"O"</td>
+<td>Call direction, important for statistics ( values are "I" or "O")</td>
+</tr>
+<tr>
+<td>$ivrDoMix</td>
+<td>false</td>
+<td>If true, the file is available when Ivr_stop_rec is called otherwise it waits until the system has produced it</td>
+</tr>
+<tr>
+<td>$recOnlyCallerChannel</td>
+<td>false</td>
+<td>If true record only caller voice else record the caller voice and the music on hold and other system files</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="stop-call-recording">
+<h1>Stop call recording<a class="headerlink" href="#stop-call-recording" title="Permalink to this headline">¶</a></h1>
+<p>Stop call recording when started</p>
+<p><code>Ivr_stop_rec($note = NULL, $buffer = false)</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$note</span> <span class="o">=</span> <span class="s2">&quot;recording_note&quot;</span><span class="p">;</span>
+
+<span class="nv">$destination</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_stop_rec</span><span class="p">(</span><span class="nv">$note</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">recording_note</span></code></code> with the note to attach file.
+<code>$destination</code> value is recorded file path</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$note</td>
+<td>NULL</td>
+<td>Set recording note to show in statistics</td>
+</tr>
+<tr>
+<td>$buffer</td>
+<td>false</td>
+<td>If true, the system automatically transfers to the standard tvox memory, otherwise the script have to manage the file by itself</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="update-popup-values">
+<h1>Update popup values<a class="headerlink" href="#update-popup-values" title="Permalink to this headline">¶</a></h1>
+<p>Updates the popup data referring to the particular call</p>
+<p><code>set_collect_data($data)</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="s2">&quot;value=12345&quot;</span><span class="p">;</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">set_collect_data</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Parameter |  Description
+——— |  ———–
+$data | String values that are stored in database tu update popup</p>
+</div>
+<div class="section" id="send-dtmf">
+<h1>Send DTMF<a class="headerlink" href="#send-dtmf" title="Permalink to this headline">¶</a></h1>
+<p>Send DTMF digit to call</p>
+<p><code>Ivr_send_dtmf($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$dtmf</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_send_dtmf</span><span class="p">(</span><span class="nv">$dtmf</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Pass array with dtmf number as value</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="load-service-voicemail">
+<h1>Load service voicemail<a class="headerlink" href="#load-service-voicemail" title="Permalink to this headline">¶</a></h1>
+<p>Load service’s voicemail</p>
+<p><code>Ivr_voicemail($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_voicemail</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>If used by the script, no parameters are needed. Remember to configure the parameters from the web interface</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="load-service-if-in-calls-limit">
+<h1>Load service if in calls limit<a class="headerlink" href="#load-service-if-in-calls-limit" title="Permalink to this headline">¶</a></h1>
+<p>Loads the service if number calls not exceeded limit</p>
+<p><code>Ivr_countcall($val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$actionService</span> <span class="o">=</span> <span class="s2">&quot;service_code&quot;</span><span class="p">;</span>
+<span class="nv">$serviceToMonitor</span> <span class="o">=</span> <span class="s2">&quot;monitor_service_code&quot;</span><span class="p">;</span>
+<span class="nv">$whatCount</span> <span class="o">=</span> <span class="s2">&quot;GLOBAL_CALL_COUNT&quot;</span><span class="p">;</span>
+<span class="nv">$limit</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_countcall</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$limit</span><span class="p">,</span> <span class="nv">$whatCount</span><span class="p">,</span> <span class="nv">$serviceToMonitor</span><span class="p">,</span> <span class="nv">$actionService</span><span class="p">));</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Array parameter with some parameters</td>
+</tr>
+</tbody>
+</table><p>array($limit, $whatCount, $serviceToMonitor, $actionService)</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$limit</td>
+<td>Set call limit to load service</td>
+</tr>
+<tr>
+<td>$whatCount</td>
+<td>Check  what count from detect call service limit: cases are: GLOBAL_CALL_COUNT, QUEUE_COUNT, ANSWER_COUNT</td>
+</tr>
+<tr>
+<td>$serviceToMonitor</td>
+<td>Service where monitor call limits</td>
+</tr>
+<tr>
+<td>$actionService</td>
+<td>Service to load after calls limit check</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="check-if-call-channel-is-up">
+<h1>Check if call channel is up<a class="headerlink" href="#check-if-call-channel-is-up" title="Permalink to this headline">¶</a></h1>
+<p>Check if call channel is active</p>
+<p><code>Ivr_isChannelUp()</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$channelUp</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_isChannelUp</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><code> $ channelUp </code> returns a Boolean value: true if channel active, false otherwise</p>
+</div></blockquote>
+</div>
+<div class="section" id="hangup-call">
+<h1>Hangup call<a class="headerlink" href="#hangup-call" title="Permalink to this headline">¶</a></h1>
+<p>Hangup current call</p>
+<p><code>Ivr_hangup($val = null)</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_hangup</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><a class="reference external" href="#exit-with-good-state"><code>$this-&gt;RightExitIVR()</code></a> close call statistics with correct values.</p>
+</div></blockquote>
+</div>
+<div class="section" id="exit-with-error">
+<h1>Exit with error<a class="headerlink" href="#exit-with-error" title="Permalink to this headline">¶</a></h1>
+<p>Exit from Ivr and set Error in statistics</p>
+<p><code>Ivr_error()</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ivr_error</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exit-with-good-state">
+<h1>Exit with good state<a class="headerlink" href="#exit-with-good-state" title="Permalink to this headline">¶</a></h1>
+<p>Exit from Ivr with correct state for statistics</p>
+<p><code>RightExitIVR($start = null)</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">RightExitIVR</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$start</td>
+<td>null</td>
+<td>Time when ivr was started, if not set, the value is the starting value of the ivr script</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="update-call-statistics">
+<h1>Update call statistics<a class="headerlink" href="#update-call-statistics" title="Permalink to this headline">¶</a></h1>
+<p>Update call statistics for custom report, is not needed if you want standard use</p>
+<p><code>incrementStatistics($startTime, $service = NULL, $node = NULL, $step = NULL, $action = NULL)</code></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$startTime</td>
+<td></td>
+<td>Time when statistics is started</td>
+</tr>
+<tr>
+<td>$service</td>
+<td>NULL</td>
+<td>Service code where active updates</td>
+</tr>
+<tr>
+<td>$node</td>
+<td>NULL</td>
+<td>Node number (if is null take current number)</td>
+</tr>
+<tr>
+<td>$step</td>
+<td>NULL</td>
+<td>Step number of node (if null take current node)</td>
+</tr>
+<tr>
+<td>$action</td>
+<td>NULL</td>
+<td>Label for stats</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="log">
+<h1>Log<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h1>
+<p>To access log, need enable windows sharing on TVox web interface<br>
+After enabling it, we can see the logs on the folder by logging in with the default username and password (ivrcustom: ivrcustom) via share samba<br></p>
+<p>Default log is info, to enable full log open asterisk cli from tamadmin user.</p>
+<p>when the asterisk cli is shown put command:</p>
+<code>
+dialplan set global TVOX_DEBUG 3
+</code><p>if need show fatal errors need enable asterisk agi:</p>
+<p><code>agi set debug on</code></p>
+<div class="section" id="info">
+<h2>Info<a class="headerlink" href="#info" title="Permalink to this headline">¶</a></h2>
+<p>Log level INFO</p>
+<p><code>info($msg, $debug_val = false, $val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="s2">&quot;log_message&quot;</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">log_message</span></code></code> with the message to log.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$msg</td>
+<td></td>
+<td>Message to log</td>
+</tr>
+<tr>
+<td>$debug_val</td>
+<td>false</td>
+<td>If set to true $val is logged to file</td>
+</tr>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Variable to log</td>
+</tr>
+</tbody>
+</table><p>If need dump variable to info log use</p>
+<p><code>info_var_dump($msg, $val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$value</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">info_var_dump</span><span class="p">(</span><span class="s2">&quot;log_message&quot;</span><span class="p">,</span><span class="nv">$value</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">log_message</span></code></code> with the message to log.
+Dump variable Array or Object to log message</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$msg</td>
+<td></td>
+<td>Message to log</td>
+</tr>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Variable to log</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="debug">
+<h2>Debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h2>
+<p>Log level DEBUG</p>
+<p><code>debug($msg, $debug_val = false, $val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">debug</span><span class="p">(</span><span class="s2">&quot;log_message&quot;</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">log_message</span></code></code> with the message to log.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$msg</td>
+<td></td>
+<td>Message to log</td>
+</tr>
+<tr>
+<td>$debug_val</td>
+<td>false</td>
+<td>If set to true $val is logged to file</td>
+</tr>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Variable to log</td>
+</tr>
+</tbody>
+</table><p>If need dump variable to debug log use</p>
+<p><code>debug_var_dump($msg, $val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$value</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">debug_var_dump</span><span class="p">(</span><span class="s2">&quot;log_message&quot;</span><span class="p">,</span><span class="nv">$value</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">log_message</span></code></code> with the message to log.
+Dump variable Array or Object to log message</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$msg</td>
+<td></td>
+<td>Message to log</td>
+</tr>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Variable to log</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="trace">
+<h2>Trace<a class="headerlink" href="#trace" title="Permalink to this headline">¶</a></h2>
+<p>Log level TRACE</p>
+<p><code>trace($msg, $debug_val = false, $val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">trace</span><span class="p">(</span><span class="s2">&quot;log_message&quot;</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">log_message</span></code></code> with the message to log.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$msg</td>
+<td></td>
+<td>Message to log</td>
+</tr>
+<tr>
+<td>$debug_val</td>
+<td>false</td>
+<td>If set to true $val is logged to file</td>
+</tr>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Variable to log</td>
+</tr>
+</tbody>
+</table><p>If need dump variable to trace log use</p>
+<p><code>trace_var_dump($msg, $val = array())</code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$value</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">trace_var_dump</span><span class="p">(</span><span class="s2">&quot;log_message&quot;</span><span class="p">,</span><span class="nv">$value</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace <code><code class="docutils literal notranslate"><span class="pre">log_message</span></code></code> with the message to log.
+Dump variable Array or Object to log message</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$msg</td>
+<td></td>
+<td>Message to log</td>
+</tr>
+<tr>
+<td>$val</td>
+<td>array()</td>
+<td>Variable to log</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<p>Library variables</p>
+<div class="section" id="agi-variables">
+<h2>Agi variables<a class="headerlink" href="#agi-variables" title="Permalink to this headline">¶</a></h2>
+<p>Is possible get variables from agi, some variables are:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clid</td>
+<td>Caller number</td>
+</tr>
+<tr>
+<td>Dnis</td>
+<td>Dialed number</td>
+</tr>
+<tr>
+<td>CallId</td>
+<td>Call identification number</td>
+</tr>
+<tr>
+<td>Service Code</td>
+<td>Service code</td>
+</tr>
+</tbody>
+</table><blockquote>
+<div><p>To get this values use this code:</p>
+</div></blockquote>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$clid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Agi</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">[</span><span class="s2">&quot;agi_callerid&quot;</span><span class="p">];</span>
+<span class="nv">$dnis</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Agi</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">[</span><span class="s2">&quot;agi_dnid&quot;</span><span class="p">];</span>
+<span class="nv">$callId</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Agi</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">[</span><span class="s2">&quot;agi_uniqueid&quot;</span><span class="p">];</span>
+<span class="nv">$serviceCode</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Agi</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">[</span><span class="s2">&quot;agi_extension&quot;</span><span class="p">];</span>  
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dial-result">
+<h2>Dial Result<a class="headerlink" href="#dial-result" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TVOX_IVR_CONTINUE</td>
+<td>0</td>
+<td>Continue with IVR script (next step)</td>
+</tr>
+<tr>
+<td>TVOX_IVR_CALLER_EXIT</td>
+<td>-1</td>
+<td>Caller hangup call</td>
+</tr>
+<tr>
+<td>TVOX_IVR_FORCED_EXIT</td>
+<td>-2</td>
+<td>Force call close</td>
+</tr>
+<tr>
+<td>TVOX_IVR_INVALID</td>
+<td>-3</td>
+<td>Invalid option insert</td>
+</tr>
+<tr>
+<td>TVOX_IVR_TIMEOUT</td>
+<td>-4</td>
+<td>Digit timeout reached</td>
+</tr>
+<tr>
+<td>TVOX_IVR_TRANSFER_CALL</td>
+<td>-5</td>
+<td>Call is trasfered</td>
+</tr>
+<tr>
+<td>TVOX_IVR_ERROR</td>
+<td>-8</td>
+<td>Generic Error</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="asr-variables">
+<h2>Asr variables<a class="headerlink" href="#asr-variables" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TVOX_RECOG_INSTANCE</td>
+<td>Result string from grammar recognition</td>
+</tr>
+<tr>
+<td>TVOX_RECOG_RESULT</td>
+<td>Speech result</td>
+</tr>
+<tr>
+<td>TVOX_RECOG_DATA</td>
+<td>String result value from match</td>
+</tr>
+<tr>
+<td>TVOX_RECOG_DTMF</td>
+<td>Digit insert during speech</td>
+</tr>
+</tbody>
+</table>
+<p>TVOX_RECOG_RESULT can have some values:<br></p><ul class="simple">
+<li><p>NO_INPUT</p></li>
+<li><p>NO_MATCH</p></li>
+<li><p>OK</p></li>
+<li><p>ERROR</p></li>
+</ul>
+</div>
+<div class="section" id="tts-variables">
+<h2>TTS Variables<a class="headerlink" href="#tts-variables" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TVOX_SYNTH_DTMF</td>
+<td>TVOX_SYNTH_DTMF</td>
+<td>Digit insert during or after play</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="library-variables">
+<h2>Library Variables<a class="headerlink" href="#library-variables" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$Agi</td>
+<td>Agi variable where get some call viariables or funcitons</td>
+</tr>
+<tr>
+<td>$UniqueID</td>
+<td>Call unique id</td>
+</tr>
+<tr>
+<td>$lastDigit</td>
+<td>Is updated when a <a href="#choose-option"><code>Ivr_choose_option()</code></a> is called, store last digit selection, need reset before other <a href="#choose-option"><code>Ivr_choose_option()</code></a></td>
+</tr>
+</tbody>
+</table><p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Telenia Software
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
