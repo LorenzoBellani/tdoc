@@ -14,6 +14,8 @@ Benvenuti nel sistema di documentazione dell'integrazione dei prodotti Tvox!
         projects/TvoxNotificationService
         projects/Click2Dial
         projects/Click2SMS
+        projects/Widget/widget
+        projects/CrossCanalita
         help
         license
         
